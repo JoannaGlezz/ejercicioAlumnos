@@ -1,9 +1,12 @@
 //FUNCION AGREGAR
 
 var contador = 0 
-//EL CONTADOR SE INICIO AFUERA DE LA FUNCION, 
-//YA QUE AL INICIARLO DENTRO EN CADA CLICK
-//REINICIABA EL CONTEO
+/*EL CONTADOR SE INICIO AFUERA DE LA FUNCION, 
+YA QUE AL INICIARLO DENTRO EN CADA CLICK
+REINICIABA EL CONTEO */
+
+var alumnos = []
+//ARRAY
 
 function agregar() {
     //TRAYENDO EL ELEMENTOS CON EL ID 
@@ -13,21 +16,71 @@ function agregar() {
     var nota2 = document.getElementById("nota2").value
     var nota3 = document.getElementById("nota3").value
     
-    var tablaP = document.getElementById("contenedor1")
+    let tablaP = document.getElementById("contenedor1")
     //INSERTANDO TABLA
-    var row = tablaP.insertRow()
-    //INSERTANDO CELDAS
-    row.insertCell().innerHTML = ++ contador 
-    row.insertCell().innerHTML = nombre
-    row.insertCell().innerHTML = fecha
-    row.insertCell().innerHTML = nota1
-    row.insertCell().innerHTML = nota2
-    row.insertCell().innerHTML = nota3
+    let row = tablaP.insertRow()
+    
+    //OBJETO 1
+    let alumno = {
+        id: ++ contador, 
+        nombre: nombre,
+        fecha: fecha,
+        nota1: nota1,
+        nota2: nota2,
+        nota3: nota3
+    }
 
+    //INSERTANDO CELDAS ALUMNO . < > HACE REFERENCIA AL OBJETO
+    row.insertCell().innerHTML = alumno.id
+    row.insertCell().innerHTML = alumno.nombre
+    row.insertCell().innerHTML = alumno.fecha
+    row.insertCell().innerHTML = alumno.nota1
+    row.insertCell().innerHTML = alumno.nota2
+    row.insertCell().innerHTML = alumno.nota3
+
+    alumnos.push(alumno)
+
+    console.log(alumnos)
+
+    // TODO: LIMPIAR FORM
 } 
 
+
+function calcular () {
+    //ELIMINAR HIJOS DEL CONTENEDOR 2 PARA NO DUPLICAR ID'S
+    function suprimirHijo () {
+        var eliminarNodo = document.getElementById("contenedor2")
+        eliminarNodo.parentNode.removeChild(id)
+
+    }    
+    /* MI INDICE ESTA INICIANDO EN LA POSICION 0 DEL ARREGLO
+    I ES MENOR A LA LONGITUD DEL ARREGLO  */
+    for (i = 0; i < alumnos.length; i++) {
+        let alumno = alumnos[i];
+        console.log(alumno)
+
+        let calculoAl = {
+            id: alumno.id,
+            nombre: alumno.nombre,
+            edad: " ",
+            promedio: " ",
+            categoria: " "
+        }
+
+        let tablaP = document.getElementById("contenedor2")
+        let row = tablaP.insertRow()
+
+        row.insertCell().innerHTML = calculoAl.id
+        row.insertCell().innerHTML = calculoAl.nombre
+        row.insertCell().innerHTML = calculoAl.edad
+        row.insertCell().innerHTML = calculoAl.promedio
+        row.insertCell().innerHTML = calculoAl.categoria
+
+    }
+
+}
+
 /*
-    var nombre = document.getElementById("nombre").value
 
     function edad (fecha){
         var fecha = document.getElementById("fecha")
