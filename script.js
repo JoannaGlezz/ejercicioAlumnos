@@ -46,7 +46,7 @@ function agregar() {
     //LIMPIANDO EL FORM
     document.getElementById("formulario").reset();
     //IMPRIMENDO ARRAY
-    console.log(alumnos)
+    
 } 
 
 
@@ -62,15 +62,15 @@ function calcular () {
     for (i = 0; i < alumnos.length; i++) {
         let alumno = alumnos[i];
 
-        console.log(alumno)
+        
 
         /* TRAYENDO AL OBJETO ALUMNO DENTRO DE OTRO OBJETO LLAMADO
         CALCULOAL */
         let calculoAl = {
             id: alumno.id,
             nombre: alumno.nombre,
-            edad: " ",
-            promedio: " ",
+            edad: edad(alumno.fecha),
+            promedio: promedio (alumno.nota1, alumno.nota2, alumno.nota3),
             categoria: " "
         }
 
@@ -92,27 +92,24 @@ function calcular () {
 }
 
 
-/*
-
-    function edad (fecha){
-        var fecha = document.getElementById("fecha")
+    //FUNCION PARA CALUCULAR EDAD
+    function edad (fechaNac){
         var hoy = new Date ()
-        edad = parseInt((hoy - fecha)/365/24/60/60/1000)
+        var edad = new Date (fechaNac)
+        var final = (hoy - edad)
 
-        var row = tablaP.insertRow()
-
-        document.getElementById("fecha").value
+        return new Date(final).getFullYear() - 1970
     }
 
-        var promedio = ((nota1.value) + (nota2.value) + (nota3.value) / 3)
-        promedioF.append(promedio)
+    //FUNCION PARA CALCULAR PROMEDIO
+    function promedio (nota1, nota2, nota3){
+        var promedioF = (parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3)) / 3
 
-        if (promedio) >= 
-
-
+        return promedioF
+    }
+        
 
     //var categoriaI = document.getElementById("categoriaI")
 
-*/
 
 
