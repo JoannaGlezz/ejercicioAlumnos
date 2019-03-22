@@ -1,26 +1,27 @@
-//FUNCION AGREGAR
-
-var contador = 0 
 /*EL CONTADOR SE INICIO AFUERA DE LA FUNCION, 
 YA QUE AL INICIARLO DENTRO EN CADA CLICK
 REINICIABA EL CONTEO */
+var contador = 0 
 
-var alumnos = []
 //ARRAY
+var alumnos = []
 
+//FUNCION AGREGAR
 function agregar() {
-    //TRAYENDO EL ELEMENTOS CON EL ID 
+    //TRAYENDO EL ELEMENTOS CON EL ID
+    //VALUE TRAE EL VALOR QUE TIENE EN EL FORM
     var nombre = document.getElementById("nombre").value
     var fecha = document.getElementById("fecha").value
     var nota1 = document.getElementById("nota1").value
     var nota2 = document.getElementById("nota2").value
     var nota3 = document.getElementById("nota3").value
     
+    //TRAYENDO EL ELEMENTODONDE INSERTARE LA TABLA
     let tablaP = document.getElementById("contenedor1")
     //INSERTANDO TABLA
     let row = tablaP.insertRow()
     
-    //OBJETO 1
+    //ESTO ES UN OBJETO, ES EL OBJETO ALUMNO
     let alumno = {
         id: ++ contador, 
         nombre: nombre,
@@ -37,28 +38,34 @@ function agregar() {
     row.insertCell().innerHTML = alumno.nota1
     row.insertCell().innerHTML = alumno.nota2
     row.insertCell().innerHTML = alumno.nota3
-
+    
+    /* AL HACER PUSH ESTAMOS "METIENDO UN 
+    OBJETO ALUMNO DENTRO DEL ARRAY ALUMNOS" */
     alumnos.push(alumno)
 
+    //LIMPIANDO EL FORM
+    document.getElementById("formulario").reset();
+    //IMPRIMENDO ARRAY
     console.log(alumnos)
-
-    // TODO: LIMPIAR FORM
 } 
 
 
 function calcular () {
     //ELIMINAR HIJOS DEL CONTENEDOR 2 PARA NO DUPLICAR ID'S
-    function suprimirHijo () {
-        var eliminarNodo = document.getElementById("contenedor2")
-        eliminarNodo.parentNode.removeChild(id)
-
-    }    
+        var nodoSeg = document.getElementById("nodo2")
+        while (nodoSeg.firstChild) {
+            nodoSeg.removeChild(nodoSeg.firstChild);
+          }
+      
     /* MI INDICE ESTA INICIANDO EN LA POSICION 0 DEL ARREGLO
     I ES MENOR A LA LONGITUD DEL ARREGLO  */
     for (i = 0; i < alumnos.length; i++) {
         let alumno = alumnos[i];
+
         console.log(alumno)
 
+        /* TRAYENDO AL OBJETO ALUMNO DENTRO DE OTRO OBJETO LLAMADO
+        CALCULOAL */
         let calculoAl = {
             id: alumno.id,
             nombre: alumno.nombre,
@@ -67,7 +74,8 @@ function calcular () {
             categoria: " "
         }
 
-        let tablaP = document.getElementById("contenedor2")
+        //INSERTANDO TABLA Y CELDAS DE NUEVO EL TABLA 3
+        let tablaP = document.getElementById("nodo2")
         let row = tablaP.insertRow()
 
         row.insertCell().innerHTML = calculoAl.id
@@ -78,7 +86,11 @@ function calcular () {
 
     }
 
+    //function limpiar () {
+     //   var resetear = document.getElementById("limpiar").reset()
+    //}
 }
+
 
 /*
 
