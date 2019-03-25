@@ -1,22 +1,66 @@
 body{
-    font-family: 'Oswald', sans-serif;
-    background-image: url(images/img1.jpg);
+    font-family: 'Acme', sans-serif;
     background-repeat: no-repeat;
+    background-image: url(images/img5.jpg);
+    color: white; 
+    width: 100%;
+    height: 100%;
 }
 
-thead tbody {
-    display: inline;
-    font-family: arial, sans-serif;
-}
 
- th tr {
-    border: 1px solid #141414;
-    align-content: center;
+.tablas, table {
+    /* display: block; */
+    border: 1px solid white;
+    text-align: center;  
+    border-collapse: collapse;
+    width: 90%;
+    height: 100%;
+   
+
     
 }
 
+tbody, td, tr {
+    text-align: center;
+    border: 1px solid white;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+
 h1{
     text-align: center;
-    color: black;
+    color:white;
 }
+
+.general{
+    width: 80%;
+    height: 20%;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.general button{
+padding: 10px;
+font-weight: 200;
+font-size: 20px;
+color: yellow;
+background-color: black;
+border-radius: 8px;
+position: unset;
+
+}
+
+input{
+    text-align: center;
+    font-size: 15px;
+}
+
+#formulario{
+    width: 100%;
+    height: 100%;
+}
+
+
+
 

@@ -6,9 +6,6 @@ var contador = 0
 //ARRAY
 var alumnos = []
 
-//function limpiar () {
-    //   var resetear = document.getElementById("limpiar").reset()
-    //}
 
 //FUNCION AGREGAR
 function agregar() {
@@ -66,8 +63,6 @@ function calcular() {
     for (i = 0; i < alumnos.length; i++) {
         let alumno = alumnos[i];
 
-
-
         /* TRAYENDO AL OBJETO ALUMNO DENTRO DE OTRO OBJETO LLAMADO
         CALCULOAL */
         let promedioF = promedio(alumno.nota1, alumno.nota2, alumno.nota3)
@@ -78,7 +73,7 @@ function calcular() {
             nombre: alumno.nombre,
             edad: edad(alumno.fecha),
             promedio: promedioF,
-            categoria: categorias (promedioF)
+            categoria: categorias(promedioF)
         }
 
         //INSERTANDO TABLA Y CELDAS DE NUEVO EL TABLA 3
@@ -92,6 +87,8 @@ function calcular() {
         row.insertCell().innerHTML = calculoAl.categoria
 
     }
+
+    let tabla3 = document.getElementById("contenedor3")
 
 }
 
@@ -116,20 +113,43 @@ function promedio(nota1, nota2, nota3) {
 function categorias(promedioF) {
     if (promedioF <= 25) {
         return "Pesimo"
-    } 
-        if (promedioF >= 26 && promedioF <= 50) {
-            return "Malo"
-        } 
-            if (promedioF >= 51 && promedioF <= 70){
-                return "Regular"
-            }
-            if (promedioF >= 71 && promedioF <= 90){
-                return "Bueno"
-            } 
-            if (promedioF >= 91 && promedioF <= 100){
-                return "Excelente"
-            }
     }
+    if (promedioF >= 26 && promedioF <= 50) {
+        return "Malo"
+    }
+    if (promedioF >= 51 && promedioF <= 70) {
+        return "Regular"
+    }
+    if (promedioF >= 71 && promedioF <= 90) {
+        return "Bueno"
+    }
+    if (promedioF >= 91 && promedioF <= 100) {
+        return "Excelente"
+    }
+}
+
+/*function promedioG() {
+
+        let promedioG = promedioF * promedioF
+       
+        let promedioG = {
+            id: contador.id,
+            promedioG: promedioG,
+            categoriaG: categorias(promedioF)
+        }
+
+    } */
+
+
+function limpiar() {
+    var reinicio = document.getElementById("limpiar")
+
+    reinicio.reset()
+}
+
+
+
+
 
 
 

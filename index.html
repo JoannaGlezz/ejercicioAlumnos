@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 
     <title>Plataforma Alumnos</title>
 
@@ -17,40 +17,34 @@
     <div class="general">
         <h1>Bienvenido</h1>
 
-        <div id="limpiar">
+        <div id="limpiar" class="main-container">
             <div>
-
                 <form id="formulario">
-
                     <div>
-                        <input type="text" id="nombre" value="" placeholder="Nombre del Alumno">
-
-                        <input type="date" id="fecha" value="" placeholder="Fecha de Nacimiento">
-                    </div>
-
-                    <div>
-                        <input type="number" id="nota1" value="" placeholder="Nota 1">
-                        <input type="number" id="nota2" value="" placeholder="Nota 2">
-                        <input type="number" id="nota3" value="" placeholder="Nota 3">
+                        <input type="text" size="20" id="nombre" value="" placeholder="Nombre del Alumno" style="width : 200px; height: 30px">
+                        <input type="date" id="fecha" value="" placeholder="Fecha de Nacimiento" style="width : 200px; height: 33px">
+                        <input type="number" id="nota1" value="" placeholder="Nota 1" style="width : 200px; height: 30px">
+                        <input type="number" id="nota2" value="" placeholder="Nota 2" style="width : 200px; height: 30px">
+                        <input type="number" id="nota3" value="" placeholder="Nota 3" style="width : 200px; height: 30px">
                     </div>
                 </form>
-
+                <br>
                 <button id="add" onclick="agregar()">Agregar</button>
-
+                <br>
             </div>
 
+            <br>
+            <div class="tablaPrincipal" id="segundaParte">
 
-            <div class="tablaPrincipal">
-
-                <table id="tablePrinc">
+                <table id="tablePrinc" class="tablas">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Fecha de Nac</th>
-                            <th>Nota 1</th>
-                            <th>Nota 2</th>
-                            <th>Nota 3</th>
+                            <td>ID</td>
+                            <td>Nombre</td>
+                            <td>Fecha de Nac</td>
+                            <td>Nota 1</td>
+                            <td>Nota 2</td>
+                            <td>Nota 3</td>
                         </tr>
                     </thead>
 
@@ -60,17 +54,19 @@
                         </tr>
                     </tbody>
                 </table>
-
+                <br>
                 <button id="calcular" onclick="calcular()">Calcular</button>
+                <br>
 
+                <br>
                 <table>
-                    <thead id="contenedor2">
+                    <thead id="contenedor2" class="tablas">
                         <tr>
-                            <th>ID</th>
-                            <th id="nombre">Nombre</th>
-                            <th id="edad">Edad</th>
-                            <th id="promedioF">Promedio Final</th>
-                            <th id="categoriaI">Categoria</th>
+                            <td>ID</td>
+                            <td id="nombre">Nombre</td>
+                            <td id="edad">Edad</td>
+                            <td id="promedioF">Promedio Final</td>
+                            <td id="categoriaI">Categoria</td>
                         </tr>
                     </thead>
 
@@ -80,16 +76,39 @@
                         </tr>
                     </tbody>
                 </table>
-
-                <span id="contenedor3">
-
-                </span>
                 <br>
 
-                <button onclick="limpiar()">Reinciar</button>
 
+                <table id="contenedor3">
+                    <thead>
+                        <tr>
+                            <td>
+                                Calculos Generales
+                            </td>
+                        </tr>
+                    </thead>
 
-
+                    <tbody>
+                        <tr>
+                            <td>
+                                N. Alumnos:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Promedio General:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Categoria General:
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <button onclick="reseteo()">Reset</button>
+                <br>
             </div>
         </div>
 
