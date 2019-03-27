@@ -141,11 +141,10 @@ function categorias(promedioF) {
     } */
 
 
-function limpiar() {
-    var reinicio = document.getElementById("limpiar")
 
-    reinicio.reset()
-}
+    function reseteo() {
+      location.reload();
+    }
 
 
 
