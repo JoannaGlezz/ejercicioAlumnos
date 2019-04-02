@@ -6,6 +6,7 @@ var contador = 0
 //ARRAY
 var alumnos = []
 
+//var alumnos2 = []
 
 //FUNCION AGREGAR
 function agregar() {
@@ -16,6 +17,13 @@ function agregar() {
     var nota1 = document.getElementById("nota1").value
     var nota2 = document.getElementById("nota2").value
     var nota3 = document.getElementById("nota3").value
+
+
+    // VALIDAR DATOS
+
+    // if(formulario.value ==''){
+    //     formulario.names="error"
+    // }
 
     //TRAYENDO EL ELEMENTODONDE INSERTARE LA TABLA
     let tablaP = document.getElementById("contenedor1")
@@ -128,23 +136,23 @@ function categorias(promedioF) {
     }
 }
 
-/*function promedioG() {
+function promedioG() {
 
-        let promedioG = promedioF * promedioF
-       
-        let promedioG = {
-            id: contador.id,
-            promedioG: promedioG,
-            categoriaG: categorias(promedioF)
-        }
+    let promedioG = promedioF * promedioF
 
-    } */
-
-
-
-    function reseteo() {
-      location.reload();
+    let promedioG = {
+        id: contador.id,
+        promedioG: promedioG,
+        categoriaG: categorias(promedioF)
     }
+
+}
+
+
+
+function reseteo() {
+    location.reload();
+}
 
 
 
